@@ -14,7 +14,6 @@ export const createEmptyTile = () => ({
   mergedFrom: null,
   moved: false,
   id: null,
-  game_won: false,
 });
 
 const setTilePosition = (tile, row, col) => {
@@ -69,6 +68,13 @@ const printGameOver = (score) => {
   final_score_span.textContent = score;
 };
 
+const printGameWon = (score) => {
+  const game_won_container = document.querySelector(".game_won_container");
+  game_won_container.classList.add("show");
+  const final_score_span = document.getElementById("won-score");
+  final_score_span.textContent = score;
+};
+
 // Generate a random tile (2 or 4) in an empty cell
 export const generateTile = (board) => {
   const empty_cells = [];
@@ -105,6 +111,8 @@ export const restartGame = (board, state) => {
   printGrid(board, state.score);
   const game_over_container = document.querySelector(".game_over_container");
   game_over_container.classList.remove("show");
+  const game_won_container = document.querySelector(".game_won_container");
+  game_won_container.classList.remove("show");
 };
 
 // Row should go from where the move starts
@@ -280,6 +288,9 @@ export const handleKeyDown = (event, board, state) => {
   generateTile(board);
   printGrid(board, state.score);
   checkGameWon(board, state);
-  if (!state.game_won) checkGameOver(board, state);
-  if (state.gameOver) printGameOver(state.score);
+  if (state.game_won) printGameWon(state.score);
+  else {
+    checkGameOver(board, state);
+    if (state.gameOver) printGameOver(state.score);
+  }
 };

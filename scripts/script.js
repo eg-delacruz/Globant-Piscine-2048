@@ -12,7 +12,7 @@ const board = Array(GRID_HEIGHT)
   .fill(0)
   .map(() => Array(GRID_WIDTH).fill(0).map(createEmptyTile));
 
-let state = { score: 0, gameOver: false };
+let state = { score: 0, gameOver: false, game_won: false };
 
 generateTile(board);
 generateTile(board);
@@ -29,3 +29,6 @@ reset_btn.addEventListener("click", () => restartGame(board, state));
 
 const reset_btn_2 = document.getElementById("restart-btn-2");
 reset_btn_2.addEventListener("click", () => restartGame(board, state));
+
+const reset_btn_3 = document.getElementById("restart-btn-3");
+reset_btn_3.addEventListener("click", () => restartGame(board, state));

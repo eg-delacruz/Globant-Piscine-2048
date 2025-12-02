@@ -32,7 +32,7 @@ You must have [Docker](https://www.docker.com/get-started) installed on your sys
 Open your terminal or command prompt and clone the project:
 
 ```bash
-git clone [Your-GitHub-Repository-URL]
+git clone git@github.com:eg-delacruz/Globant-Piscine--2048.git 2048-game
 cd 2048-game
 ```
 

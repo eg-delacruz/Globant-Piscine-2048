@@ -35,3 +35,29 @@ Open your terminal or command prompt and clone the project:
 git clone [Your-GitHub-Repository-URL]
 cd 2048-game
 ```
+
+### 2. Build the Docker Image
+
+Use docker compose to build the necessary image and start the web server in the background:
+
+```
+docker compose up -d
+```
+
+- This command performs two actions:
+  - Builds the Docker image as specified in the `Dockerfile`.
+  - Starts a container running an Nginx server that serves the project files.
+
+### 3. Access the Game in Your Browser
+
+Open your web browser and navigate to `http://localhost:8080` to access the 2048 game.
+
+The game should load, and you can start playing immediately!
+
+### 4. Stopping the Docker Container
+
+When you are done playing, you can stop the Docker container by running:
+
+```bash
+docker compose down
+```

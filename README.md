@@ -1,4 +1,4 @@
-# Globant-Piscine---2048
+# Globant-Piscine-2048
 
 Globant piscine intended to develop the 2048 game using HTML, CSS and JavaScript
 

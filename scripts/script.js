@@ -1,7 +1,5 @@
 import { restartGame } from './game.js';
 
-import { GRID_HEIGHT, GRID_WIDTH } from './variables.js';
-
 import { grid } from './game.js';
 
 grid.init();

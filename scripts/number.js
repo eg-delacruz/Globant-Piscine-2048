@@ -1,14 +1,16 @@
 import { grid } from './game.js';
 
 export const number = {
-  numbers: [],
-  getElements: function () {
-    const numberElements = document.getElementsByClassName('number');
+  // numbers: [],
+  // Get all number DOM elements and store in numbers array
+  // getElements: function () {
+  //   const numberElements = document.getElementsByClassName('number');
 
-    for (let numberElement of numberElements) {
-      this.numbers.push(numberElement);
-    }
-  },
+  //   for (let numberElement of numberElements) {
+  //     this.numbers.push(numberElement);
+  //   }
+  // },
+
   spawn: function () {
     const emptyCellIndex = grid.randomEmptyCellIndex();
 
@@ -17,7 +19,7 @@ export const number = {
     }
 
     const numberElement = document.createElement('div');
-    const numberValue = 2;
+    const numberValue = Math.random() < 0.9 ? 2 : 4;
 
     numberElement.innerText = numberValue;
     numberElement.dataset.value = numberValue;
@@ -32,6 +34,7 @@ export const number = {
 
     return true;
   },
+
   moveTo: function (fromCell, toCell) {
     const number = fromCell.number;
 

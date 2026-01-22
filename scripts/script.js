@@ -26,10 +26,10 @@ document.addEventListener('keydown', ({ key }) => {
 });
 
 const reset_btn = document.getElementById('restart-btn');
-reset_btn.addEventListener('click', () => restartGame(board, state));
+reset_btn.addEventListener('click', () => restartGame());
 
 const reset_btn_2 = document.getElementById('restart-btn-2');
-reset_btn_2.addEventListener('click', () => restartGame(board, state));
+reset_btn_2.addEventListener('click', () => restartGame());
 
 const reset_btn_3 = document.getElementById('restart-btn-3');
-reset_btn_3.addEventListener('click', () => restartGame(board, state));
+reset_btn_3.addEventListener('click', () => restartGame());

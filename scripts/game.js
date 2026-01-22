@@ -6,6 +6,7 @@ import { TOTAL_CELLS } from './variables.js';
 import { number } from './number.js';
 
 export const grid = {
+  // Attributes
   gridElem: document.getElementsByClassName('grid-container')[0],
   cells: [],
   playable: false,
@@ -19,6 +20,8 @@ export const grid = {
     LEFT: [1, 5, 9, 13],
     RIGHT: [4, 8, 12, 16],
   },
+
+  // Methods
   init: function () {
     // Create div cell elements in grid container
     for (let i = 0; i < TOTAL_CELLS; ++i) {
@@ -42,6 +45,8 @@ export const grid = {
     number.spawn();
     this.playable = true;
   },
+
+  // As long as there is at least one empty cell, return a random empty cell index
   randomEmptyCellIndex: function () {
     let emptyCells = [];
 
@@ -58,6 +63,8 @@ export const grid = {
 
     return emptyCells[Math.floor(Math.random() * emptyCells.length)];
   },
+
+  // TODO: check how we access the value of a number to change it so that I can apply the same logic to the score value
   slide: function (direction) {
     if (!this.playable) {
       return false;
@@ -129,5 +136,3 @@ export const grid = {
     }, 500);
   },
 };
-
-//////////////////// New code (end) ////////////////////

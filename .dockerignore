@@ -11,3 +11,6 @@ pnpm-lock.yaml
 *.swp
 .DS_Store
 docker-compose.yml
+.dockerignore
+docker-compose.override.yml
+README.md

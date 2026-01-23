@@ -19,6 +19,12 @@ The 2048 game is a single-player sliding block puzzle. The goal is to slide numb
 
 ---
 
+## 🌐 Live Demo
+
+Try the game online: **[https://globant-piscine-2048-production.up.railway.app/](https://globant-piscine-2048-production.up.railway.app/)**
+
+---
+
 ## 🚀 How to Run/Test the Project Locally
 
 This project uses **Docker** to provide a consistent, containerized environment that includes a high-performance **Nginx** web server to serve the static HTML, CSS, and JavaScript files.

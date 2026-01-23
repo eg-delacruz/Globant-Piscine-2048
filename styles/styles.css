@@ -1,3 +1,27 @@
+:root {
+  /* Grid sizing variables */
+  --grid-size: 70vmin;
+  --cell-size: 15vmin;
+  --cell-margin: 2vmin;
+}
+
+/* Responsive design for tablets and mobile devices */
+@media (max-width: 768px) {
+  :root {
+    --grid-size: 90vw;
+    --cell-size: calc((90vw - 11.25vw) / 4);
+    --cell-margin: 2.25vw;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --grid-size: 95vw;
+    --cell-size: calc((95vw - 11.875vw) / 4);
+    --cell-margin: 2.375vw;
+  }
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -52,8 +76,8 @@ h1 {
 
 .grid-wrapper {
   /* Maintain aspect ratio 1:1 on every viewport size */
-  width: 70vmin;
-  height: 70vmin;
+  width: var(--grid-size);
+  height: var(--grid-size);
   margin: 0 auto;
   background-color: var(--background-color);
 }
@@ -61,28 +85,30 @@ h1 {
 .grid-container {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .cell {
-  width: 15vmin;
-  height: 15vmin;
-  margin: 2vmin 2vmin 0 0;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  margin: var(--cell-margin) var(--cell-margin) 0 0;
   background-color: var(--light-accent);
-  float: left;
+  flex-shrink: 0;
 }
 /* add left margin to first childs of rows */
 .cell:nth-child(4n + 1) {
-  margin-left: 2vmin;
+  margin-left: var(--cell-margin);
 }
 
 .number {
   position: absolute;
-  height: 15vmin;
-  width: 15vmin;
+  height: var(--cell-size);
+  width: var(--cell-size);
   font-size: 5vmin;
   font-weight: bold;
   text-align: center;
-  line-height: 15vmin;
+  line-height: var(--cell-size);
   background-color: var(--tile_2);
   /* Smooth transition for all properties */
   transition: all 0.3s;
